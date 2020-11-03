@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str=["闺蜜","朋友","友情"];
+        var str=str.join("|");
+        console.log(str);
+        var input=prompt("请输入文本：")
+        var str=input.search(new RegExp(str));
+        if(str!=-1){
+            alert("陈微是某符的女神经朋友")
+        }else{
+            alert("再见吧损友")
+        }
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        <script>
+            var input="我说你知道韩国的小硕吗和韩国的小镐吗？他们都姓李，那就叫他们小李吧";
+            var str=input.replace(/小[\u4e00-\u9fa5]/g,"李李jia");
+            document.write(`${str}`)
+            console.log(str);
+        </script>
+    </h1>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        <script>
+            //测试indexof
+            var input=prompt("请输入您喜欢的偶像")
+            // var str=input.indexOf("李钟硕")
+            // var str=input.search(/([喜欢]|min)\s*([敏硕]|ho)/i)
+            var str=input.match(/([我草]|wo)\s*([你们]|ho)/i)
+            if(str!=null){
+                document.write(`<h2>哈哈哈哈！在位置${str.index}，有敏感词内容为${str[0]}</h2>`)
+            }else{
+                document.write(`<h2>嘿嘿嘿嘿！${input}加油！</h2>`)
+            }
+        </script>
+    </h1>
+</body>
+</html>         

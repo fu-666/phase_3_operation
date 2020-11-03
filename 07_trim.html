@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        <script>
+            function trimLeft(str){
+                return str.replace(/^\s+/,"")
+            };
+            function trimRight(str){
+                return str.replace(/\s+$/,"")
+            };
+            function trim(str){
+                return str.replace(/^\s+|\s+$/g,"")
+            };
+            //第一种方法
+            // var str="   zhang   dong    ";
+            // console.log(trimLeft(str));
+            // console.log(trimRight(str));
+            // console.log(trim(str));
+
+            //第二种方法
+             //ES5、6
+            var str="    zhang    dong    ";
+            console.log(str.trimLeft());
+            console.log(str.trimRight());
+            console.log(str.trim())
+        </script>
+    </h1>
+</body>
+</html>
