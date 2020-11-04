@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var details={ sname:"liminho",sage:33,
+                intr:function(){
+                // console.log(`I'm liminho`)//直接写
+                console.log(`I'm ${this.sname} I'm ${this.sage}`)//最佳方法this访问
+                }
+            }
+        console.log(details.sname);
+        details.intr();
+        details.sage++//+等于34
+        details.intr();
+        console.log(details);//结果是dir
+    </script>
+</body>
+</html>

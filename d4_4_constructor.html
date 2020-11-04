@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.定义构造函数并描述类型对象的统一结构
+        function idol(sname,sex){
+            this.sname=sname;
+            this.sex=sex;
+            this.intr=function(){
+                console.log(`He's my favorite${this.sname},sex's ${this.sex}`)
+            }
+        }
+        //2.反复创建多个对象
+        var lizs=new idol("李钟硕","男");
+        var limh=new idol("李敏镐","男");
+        lizs.intr();
+        limh.intr();
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.定义构造函数并描述类型对象的统一结构
+        function Idol(sname,sex){
+            this.sname=sname;
+            this.sex=sex;
+            
+        }
+        //输出构造函数的原型对象
+        console.log(Idol.prototype)
+        //3.方法定义都放进原型对象中
+        Idol.prototype.intr=function(){
+                console.log(`He's my favorite${this.sname},sex's ${this.sex}`)
+        }
+        //2.反复创建多个子对象
+        var lizs=new Idol("李钟硕","男");
+        var limh=new Idol("李敏镐","男");
+        var ym=new Idol("李敏镐","女");
+        lizs.intr();
+        limh.intr();
+        ym.intr();
+        //检测子对象和（父）原型对象的关系
+        console.log(lizs.__proto__==Idol.prototype)
+
+        //4.自有属性和共有属性
+        Idol.prototype.texing="明星";
+        console.log(limh.texing,lizs.texing,ym.texing);
+        console.log(Array.prototype);
+    </script>
+</body>
+</html>
