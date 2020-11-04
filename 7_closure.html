@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1用外层函数包裹变量和内层函数
+        function parent(){
+            // 2内层函数
+            var total=1000;
+            // 外层函数将内层函数返回(return)到外部
+            return function(money){
+                total-=money;//局部变量不可重用
+                console.log(`花了${money},还剩${total}`);
+            }
+        }
+        // 3外层想用内层函数的，要调用外层函数，接住返回的内层函数对象
+        var pay=parent()
+        pay(100)
+        pay(700)
+        var pay_1=parent()//与pay无关
+        pay_1(500)
+    </script>
+</body>
+</html>

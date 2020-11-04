@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function pay(){
+            if(arguments.length==0){
+                console.log(`手机支付1`)
+            }else if(arguments.length==1){
+                console.log(`现金支付2${arguments[0]}元`);
+            }else{
+                console.log(`支付3的卡号是：${arguments[1]}元`)
+            }
+        }
+        pay();
+        pay(7);
+        pay(7777777,77);
+
+    </script>
+</body>
+</html>

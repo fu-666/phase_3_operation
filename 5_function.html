@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (function(){
+            var start=new Date();
+            alert(`当前页面加载at:${start.toLocaleString()}`)
+        })()
+    </script>
+    <script>
+        var str="you can you up";
+        str=str.replace(/\b[a-z]/g,function(kw){
+            return kw.toUpperCase();
+        });
+        console.log(str);
+        console.log(window);
+    </script>
+    <script>
+        (function(){
+            var end=new Date();
+            alert(`当前页面完成加载at:${end.toLocaleString()}`)
+        })()
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str="我们的同学有小空，小明，小白，还有一个老朋友叫做小微，哈哈好最后一个像猪猪样的小猪女孩";
+        var reg=/小[\u4e00-\u9fa5]/g;
+        // var arr=reg.exec(str);
+        // console.log(arr);
+        // var arr=reg.exec(str);
+        // console.log(arr);
+
+        do{
+            // var reg=/小[\u4e00-\u9fa5]/g;
+            var arr=reg.exec(str);
+            console.log(arr);
+        }while(arr!=null);
+
+    </script>
+</body>
+</html>
