@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Student(sname,sage){
+            this.sname=sname;
+            this.sage=sage;
+        }
+        //原型对象自定义方法
+        Student.prototype.toString=function(){
+            // console.log("调用了一次toSting()")
+            return `sname:${this.sname} sage:${this.sage}`
+        }
+        //重写
+        var lilei=new Student("lilei",11);
+        console.log(lilei.toString());
+        var arr=[1,2,3,4];
+        console.log(arr.toString());
+    </script> 
+</body>
+</html>

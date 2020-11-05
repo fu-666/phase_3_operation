@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //4自定义新父元素的属性名和属性值
+        var father={money:1000000,car:"infinite"};
+        //1创建构造函数带形参
+        function Student(sname,sage){
+            this.sname=sname;
+            this.sage=sage;
+        }
+        //3设置子对象的原型对象为新的父元素
+        Student.prototype=father;
+        //2赋值传参
+        var lilei=new Student("lilei",11);
+        var hmm=new Student("hmm",12);
+        //5打印替换之后的结果
+        console.log(lilei.money,lilei.car);
+        console.log(hmm.money,hmm.car)
+    </script> 
+</body>
+</html>

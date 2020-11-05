@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";//开始严格模式
+        var mz={
+            eid:1007,
+            sname:"jojo",
+            saliry:10000
+            
+        }
+        //1.禁止修改只读 
+        // Object.defineProperty(mz,"eid",{
+        //     writable:false
+        // })
+        // mz.eid=3;
+
+        //2.
+        //3.禁止遍历
+        Object.defineProperties(mz,{
+            eid:{
+            writable:false,
+            configurable:false
+            },
+            sname:{
+                configurable:false
+            },
+            saliry:{
+                enumerable:false,
+                configurable:false
+            }
+        })
+        // mz.eid=1;
+        delete mz.sname;
+        // for (var key in mz){
+        //     console.log(`${key}+${mz[key]}`)//只能看sname,saliry
+        // }
+        // console.log(mz.eid)//对象中eid变为灰色
+        console.log(mz)//1007
+    </script> 
+</body>
+</html>

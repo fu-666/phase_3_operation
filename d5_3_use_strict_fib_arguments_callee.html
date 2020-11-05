@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // "use strict";//开始严格模式
+        //1紧耦合
+        // function fib(n){
+        //     if(n<3){
+        //         return 1;
+        //     }else{
+        //         return fib(n-1)+fib(n-2)
+        //     }
+        // }
+        // console.log(fib(10));
+        
+        //2自动获取当前正在执行的函数本身：松耦合；外部函数名改变，内部函数名不用改，就可以自动获取函数本身，重复效率低;在严格模式 "use strict"下不能用，报错
+        // function fib(n){
+        //     if(n<3){
+        //         return 1;
+        //     }else{
+        //         return arguments.callee(n-1)+arguments.callee(n-2);
+        //     }
+        // }
+        // console.log(fib(10))
+        //3循环
+        function f(n){
+            if(n<3){
+                return 1;
+            }else{
+                var f1=1,f2=1,fn;
+                for(var i=3;i<=n;i++){
+                    fn=f1+f2;
+                    f1=f2;
+                    f2=fn;
+                }
+                return fn;
+            }
+        }
+        console.log(f(10));
+    </script> 
+</body>
+</html>
