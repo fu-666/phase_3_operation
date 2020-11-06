@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       //filter:复制出原数组中符合条件的元素，放入新数组中返回，原数组保持不变;以追加的模式 新数组.push()
+       arr1=[1,2,3,4,5];
+       arr2=arr1.filter(function(elem){
+           return elem%2==0;
+       })
+       console.log(arr1);//[1,2,3,4,5]
+       console.log(arr2);//[2,4]
+    </script>
+</body>
+</html>

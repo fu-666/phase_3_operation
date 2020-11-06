@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        var student={
+            sname:"lili",
+            sage:11
+        }
+        Object.preventExtensions(student);
+        //尝试给对象添加新属性：不能
+        student.sclass=1;//报错Cannot add property Eid, object is not extensible
+        console.log(student);
+    </script>
+</body>
+</html>

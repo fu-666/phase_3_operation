@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        var student={
+            sname:"lili",
+            sage:11,
+            score:90
+        }
+        Object.defineProperties(student,{
+            sage:{
+                writable:false
+            },
+            score:{
+                enumerable:false
+            }
+        })
+        //密封对象
+        Object.seal(student);
+        // student.sage=12;
+        // delete student.sname;
+        for(var key in student){
+            console.log(`${key}:${student[key]}`)
+        }
+        console.log(student);
+    </script>
+</body>
+</html>
