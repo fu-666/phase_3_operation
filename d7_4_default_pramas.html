@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function intr(msg="主人很懒，什么也没有留下"){
+            console.log(`我的自我介绍：${msg}`);
+        }
+        intr("way to go!");
+        intr()//默认自动调用结果为："我的自我介绍：主人很懒，什么也没有留下"
+        function menu(mean="汉堡",snake="各种零食",mark="各种奶茶"){console.log(`您点的套餐是：
+                    主食：${mean}
+                    小吃：${snake}
+                    饮料：${mark}`)}
+        menu();
+        menu("全家桶","冰淇淋","QQ奶茶");
+        menu("全家桶");
+        menu("全家桶","冰淇淋");
+        
+        function TV({
+            mname="积极向上",
+            actors="积极",
+            time="2020—10-9"
+        }){
+            console.log(`电视推荐：
+        电影名称：${mname}
+        演员：${actors}
+        上映时间：${time}`)
+        }
+        TV({
+            mname:"有听见你的声音",
+            actors:"李钟硕等",
+            time:"2017-"
+        })
+        //默认
+        TV({})
+        
+    </script>
+</body>
+</html>

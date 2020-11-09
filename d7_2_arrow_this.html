@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      var lilei={
+        sname:"Li Lei",
+        friends:["lizs","minho","mimi"],
+        // intr:function(){//ES6中对象方法的function都可以省略，简化function,不会改变原有的this；不能写成intr:()=>{}
+        intr(){//类似于bind永久绑定，给this释放
+          this.friends.forEach(
+            // function(fname){//回调函数自调时this都指向window要使用
+            fname=>{
+              var a=10;//报错
+              console.log(`${this.sname}认识 ${fname}`)
+            }
+          ) 
+        }
+      }
+      lilei.intr();
+    </script>
+</body>
+</html>

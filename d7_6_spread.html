@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(Math.max(2,1,4,7))
+        console.log(Math.min(2,1,4,7))
+        //spread
+        var arr=[2,1,4,7];
+        console.log(Math.max(...arr));
+        console.log(Math.min(...arr));
+
+        var arr1=[7,8,9];
+        var arr2=[...arr1];
+        console.log(arr2);
+        console.log(arr2==arr1);//false
+
+        var arr1=[1,2,3];
+        var arr2=[5,6,7];
+        var arr3=[...arr1,4,...arr2,8];//[1, 2, 3, 4, 5, 6, 7, 8]
+        console.log(arr3);
+
+        var lilei={sname:"Li Lei",sage:11};
+        var hmm={...lilei};
+        console.log(hmm);
+        console.log(lilei==hmm);//false
+    </script>
+</body>
+</html>

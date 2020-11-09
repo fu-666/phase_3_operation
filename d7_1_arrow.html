@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     function add(a,b){
+      return a+b;
+    }
+    console.log(add(3,5));//8
+
+    var arr=[12,3,123,2,1,23];
+    arr.sort(function(a,b){return a-b});
+    console.log(arr);//1,2,3,12,23,123
+
+    var str="you can you up";
+    str=str.replace(/\b[a-z]/g,function(kw){
+      return kw.toUpperCase();
+    });
+    console.log(str); //You Can You Up
+
+    var arr=["亮亮","然然","东东"];
+    arr.forEach(function(elem){
+      console.log(`${elem} - 到！`)
+    });
+
+    var arr=[1,2,3,4,5];
+    var arr2=arr.map(function(elem){
+      return elem*2;
+    });
+    console.log(arr);//1,2,3,4,5
+    console.log(arr2);//2,4,6,8,10
+
+    var arr=[1,2,3,4,5];
+    var arr2=arr.filter(function(elem){
+      return elem%2==0
+    });
+    console.log(arr);//1,2,3,4,5
+    console.log(arr2);//2,4
+
+    var arr=[1,2,3,4,5];
+    var result=arr.reduce( function(box,elem){
+      return box+elem;
+    },0);
+    console.log(result);//15
+
+    var t=5;
+    //复习第一阶段定时器
+    var timer=setInterval(function(){
+      t--;
+      if(t>0){
+        console.log(t)
+      }else{
+        console.log("boom!!!");
+        clearInterval(timer);
+      }
+    },1000);
+
+    (function(){
+      var t=new Date();
+      console.log(`网页内容加载完成,at:${t.toLocaleString()}`);
+    })(); 
+
+    //箭头函数
+    var add=(a,b)=>a+b;
+    console.log(add(3,5));//8
+
+    var arr=[12,3,123,2,1,23];
+    arr.sort((a,b)=>a-b);
+    console.log(arr);//1,2,3,12,23,123
+
+    var str="you can you up";
+    str=str.replace(/\b[a-z]/g,(kw)=>kw.toUpperCase());
+    console.log(str); //You Can You Up
+
+    var arr=["亮亮","然然","东东"];
+    arr.forEach(elem=>console.log(`${elem} - 到！`));
+
+    var arr=[1,2,3,4,5];
+    var arr2=arr.map(elem=>elem*2);
+    console.log(arr);//1,2,3,4,5
+    console.log(arr2);//2,4,6,8,10
+
+    var arr=[1,2,3,4,5];
+    var arr2=arr.filter(elem=>elem%2==0);
+    console.log(arr);//1,2,3,4,5
+    console.log(arr2);//2,4
+
+    var arr=[1,2,3,4,5];
+    var result=arr.reduce((box,elem)=>box+elem,0);
+    console.log(result);//15
+
+    var t=5;
+    //复习第一阶段定时器
+    var timer=setInterval(()=>{
+      t--;
+      if(t>0){
+        console.log(t)
+      }else{
+        console.log("boom!!!");
+        clearInterval(timer);
+      }
+    },1000);
+
+    (()=>{
+      var t=new Date();
+      console.log(`网页内容加载完成,at:${t.toLocaleString()}`);
+    })();
+    </script>
+</body>
+</html>

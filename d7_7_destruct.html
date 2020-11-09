@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //arr
+        var arr=[2000,1,12];
+        var [y,m]=arr;
+        var [,,d]=arr;
+        console.log(`有异议的日子${y}年:农历${m}月:${d} 哈哈哈！`)
+
+        //obj
+        var obj1={sname:"ww",sage:20,target:"true friends"}
+        var {sname,sage,target}=obj1;//既做属性值又做属性名
+        console.log(`${sname} 是我的好友,我给她的标签是 ${target}`)
+
+
+    </script>
+</body>
+</html>
