@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Flyer{
+            constructor(x,y){
+                this.x=x;
+                this.y=y;
+            }
+            fly(){
+                console.log(`飞到${this.x},${this.y}的位置`)
+            }
+        }
+        class Plane extends Flyer{
+            constructor(x,y,score){
+                super(x,y);//this.x;this.y
+                this.score=score
+            }
+            Getscore(){
+                console.log(`击落敌机获得${this.score}分`)
+            }
+        }
+        var p1=new Plane(50,100,5);
+        console.log(p1);
+        p1.fly();
+        p1.Getscore();
+
+        class San extends Flyer{
+            constructor(x,y,award){
+                super(x,y);//this.x;this.y
+                this.award=award;
+            }
+            Getaward(){
+                console.log(`击落敌伞获得${this.award}`)
+            }
+        }
+        var s1=new San(100,100,"生命值");
+        console.log(s1);
+        s1.fly();
+        s1.Getaward();
+  </script>    
+</body>
+</html>

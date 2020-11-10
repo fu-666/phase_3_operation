@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //方法一:不完整
+        // function liang(){
+        //     console.log(`亮亮起跑了`);
+        //     setTimeout(function(){
+        //         console.log("亮亮到达终点了！")
+        //     },6000)
+        // }
+        // function ran(){
+        //     console.log(`然然起跑了`);
+        //     setTimeout(function(){
+        //         console.log("然然到达终点了！")
+        //     },4000)
+        // }
+        // function dong(){
+        //     console.log(`然然起跑了`);
+        //     setTimeout(function(){
+        //         console.log("然然到达终点了！")
+        //     },2000)
+        // }
+        // liang();
+        // ran();
+        // dong();
+        // console.log(`比赛结束了!`)
+
+        //方法二：可以调换
+        // function liang(che){
+        //     console.log(`亮亮起跑了`);
+        //     setTimeout(function(){
+        //         console.log("亮亮到达终点了！");
+        //         che();
+        //     },6000);
+        // }
+        // function ran(che){
+        //     console.log(`然然起跑了`);
+        //     setTimeout(function(){
+        //         console.log("然然到达终点了！");
+        //         che();
+        //     },4000);
+        // }
+        // function dong(che){
+        //     console.log(`东东起跑了`);
+        //     setTimeout(function(){
+        //         console.log("东东到达终点了！");
+        //         che();
+        //     },2000);  
+        // }
+        // liang(function(){ran(function(){dong(function(){console.log("比赛结束")})})})//一个包含一个(带着跑)
+
+        //方法三：promise->.then
+        // function liang(){
+        //     return new Promise(function(door){
+        //         console.log(`亮亮起跑了`);
+        //         setTimeout(function(){
+        //             console.log("亮亮到达终点了！");
+        //             door();
+        //         },6000);
+        //     }) 
+        // }
+        // function ran(){
+        //     return new Promise(function(door){
+        //         console.log(`然然起跑了`);
+        //         setTimeout(function(){
+        //             console.log("然然到达终点了！");
+        //             door();
+        //         },4000);
+        //      })
+        // }
+        // function dong(){
+        //     return new Promise(function(door){
+        //         console.log(`东东起跑了`);
+        //         setTimeout(function(){
+        //             console.log("东东到达终点了！");
+        //             door();
+        //         },2000);
+        //     })
+        // }
+        // liang()
+        // .then(ran)
+        // .then(dong)
+        // .then(function(){console.log(`比赛结束！开心开心开心！`)})
+
+        //方法四promise->param
+        function liang(){
+            bang="接力棒";
+            return new Promise(function(door){
+                console.log(`亮亮拿起${bang}起跑了`);
+                setTimeout(function(){
+                    console.log(`亮亮拿${bang}到达终点了！`);
+                    door(bang);
+                },6000);
+            }) 
+        }
+        function ran(){
+            return new Promise(function(door){
+                console.log(`然然拿起${bang}起跑了`);
+                setTimeout(function(){
+                    console.log(`然然拿${bang}到达终点了！`);
+                    door(bang);
+                },4000);
+             })
+        }
+        function dong(){
+            return new Promise(function(door){
+                console.log(`东东拿起${bang}起跑了`);
+                setTimeout(function(){
+                    console.log(`东东拿${bang}到达终点了！`);
+                    door(bang);
+                },2000);
+            })
+        }
+        liang()
+        .then(ran)
+        .then(dong)
+        .then(function(){console.log(`比赛结束！开心开心开心！`)})
+    </script>
+</body>
+</html>
