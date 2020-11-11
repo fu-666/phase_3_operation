@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历节点树</title>
+</head>
+<body>
+    <form action="">
+        用户名：<input name="uname"><br/>
+        性别：<label for=""><input type="radio" name="sex">男</label>
+            <label for=""><input type="radio" name="sex">女</label>
+    </form>
+
+    <span>Hello World !</span>
+		<ul id="nav">
+			<li class="item parent">电影</li>
+			<li class="item parent">综艺
+				<ul>
+					<li class="item child active">跑男</li>
+					<li class="item child">爸爸</li>
+					<li class="item child">极限</li>
+				</ul>
+			</li>
+			<li class="item parent">剧集</li>
+        </ul>
+    <script>
+        //按Name查找
+        var inputUname=document.getElementsByName("uname")[0];
+        console.log(inputUname);
+        var radios=document.getElementsByName("sex");
+        console.log(radios);
+        //按Id查找
+        //想查找一个id为nav的一个元素
+        var ul=document.getElementById("nav");
+        console.log(ul);
+        //按ClassName查找
+        //想查找ul下所有class为item的元素
+        var items=ul.getElementsByClassName("item");
+        console.log(items);
+        //想查找ul下所有class为child的元素
+        var children=ul.getElementsByClassName("child");
+        console.log("children");
+        var active=ul.getElementsByClassName("active")[0];
+        console.log(active);
+        //按TagName查找
+        var li=ul.getElementsByTagName("li");
+        console.log(li);//与39行的结果一样
+    </script>	
+</body>
+</html>

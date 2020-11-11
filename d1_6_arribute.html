@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a id="a1" href="http://waytogo.cn" target="_blank">Way To Go</a>
+    <script>
+        var a1=document.getElementById("a1");
+        //旧HTML DOM
+        // 获得a1的href属性值
+        console.log(a1.getAttribute("href"));
+        //修改a1的title属性值:
+        a1.setAttribute("title","奥力给")
+        // 判断a1中包含target属性
+        console.log(a1.hasAttribute("target"));
+        // 移除target属性
+        a1.removeAttribute("target");
+        
+        //新HTML DOM
+        // 获得a1的href属性值
+        console.log(a1.href);
+        // 获得a1的href属性值
+        a1.title="奥力给"
+        // 判断a1中包含target属性
+        console.log(a1.target!=="");
+        // 移除target属性
+        a1.target="";
+        // 再判断a1是否包含target属性
+        console.log(a1.target!=="");
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="b1">来自&lt;&lt;<a href="javascript:;">新华社</a>&gt;&gt;的消息</h3>
+    <h3 id="b2"></h3>  
+    <h3 id="b3"></h3>  
+    <script>
+        var b1=document.getElementById("b1");
+        var b2=document.getElementById("b2");
+        var b3=document.getElementById("b3");
+        //想要获取b1的内容
+        console.log(b1.innerHTML);
+        console.log(b1.textContent);
+        //想修改b2的内容
+        b2.innerHTML=`来自&lt;&lt;<a href="javascript:;">新华社</a>&gt;&gt;的消息`
+        b3.textContent=`来自&lt;&lt;<a href="javascript:;">新华社</a>&gt;&gt;的消息`
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>使用Selector API实现购物车客户端计算</title>
+<meta charset="utf-8" />
+<style>
+	table{width:600px; text-align:center;
+		border-collapse:collapse;
+	}
+	td,th{border:1px solid black}
+	td[colspan="3"]{text-align:right;}
+    tfoot td:last-child{
+        background-color:yellow;
+    }
+    tbody td:last-child{
+        background-color: pink;
+    }
+</style>
+</head>
+<body>
+    <table id="data">
+		<thead>
+			<tr>
+				<th>商品名称</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>iPhone6</td>
+				<td>¥4488.00</td>
+        <td>
+          <button>-</button>
+          <span>1</span>
+          <button>+</button>
+        </td>
+				<td>¥4488.00</td>
+			</tr>
+			<tr>
+				<td>iPhone6 plus</td>
+				<td>¥5288.00</td>
+				<td>
+          <button>-</button>
+          <span>1</span>
+          <button>+</button>
+				</td>
+				<td>¥5288.00</td>
+			</tr>
+			<tr>
+				<td>iPad Air 2</td>
+				<td>¥4288.00</td>
+        <td>
+          <button>-</button>
+          <span>1</span>
+          <button>+</button>
+        </td>
+				<td>¥4288.00</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3">Total: </td>
+				<td>¥14064.00</td>
+			</tr>
+		</tfoot>
+    </table>
+    <script>
+        // 1查找触发事件的元素
+        //本例中：查找id为data的table下所有按钮
+        //1.1 先查找id为data的table
+        var table=document.getElementById("data");
+        console.log(table);
+        // 1.2在table下找所有button元素
+        var btns=table.getElementsByTagName("button");
+        console.log(btns);
+        // 2绑定事件处理函数
+        //本例中：因为要给每个找到的按钮元素都绑定单击事件处理函数，所以必须遍历查找结果的类数组对象中每个按钮
+        // var btn0=btns[0];
+        // btn0.onclick=function(){
+        //     alert("疼 btn0")
+        // }
+        for(var btn of btns){
+            //每遍历出一个按钮元素对象，就为其绑定单击事件处理函数
+            btn.onclick=function(){
+                // alert("疼")
+                //innerHTML总会在最后一个显示(错误)
+                // btn.innerHTML="❀";
+                //this指当前用户正在点击触发事件的元素(正确)
+                // this.innerHTML="❀";
+                // 3查找要修改的元素
+                //本例中：无论点哪个按钮，都应该找按钮的父元素td的第二个孩子span
+                var span=this.parentElement.children[1];
+                // console.log(span);
+                // 4修改元素:3步
+                // 4.1先取出元素的旧内容，转为整数
+                var n=parseInt(span.innerHTML);
+                // 4.2做计算
+                // 如果当前点击的按钮的内容是+
+                if(this.innerHTML=="+"){
+                    n++;//就++
+                }else if(n>1){//否则如果当前的按钮的内容是—，且n>1时
+                    n--;//才n--
+                }
+                //4.3 再放回去
+                span.innerHTML=n;
+
+                //第二个功能：数量变化，计算小计
+                // 3.查找要修改的元素
+                //本例中：要修改当前按钮父元素的下一个兄弟的内容
+                var subTd=this.parentElement.nextElementSibling;
+                // 4.修改元素
+                //本例中：先获得单价*数量=小计
+                // 4.1 先获得当前按钮的父元素的前一个兄弟td的内容
+                var price=parseInt(this.parentElement//当前td
+                .previousElementSibling//前一个td
+                .innerHTML//￥4488.00
+                .slice(1)//4488.00
+                )//4488
+                // 4.2用单价*数量得到小计
+                var sub=price*n;
+                // 4.3 将小计放回小计格中
+                subTd.innerHTML=`￥${sub.toFixed(2)}`
+
+                //第三个功能:计算总价
+                // 3查找要修改的元素
+                //本例中：查找tfoot下最后一个td
+                var lastTd=table.querySelector("tfoot td:last-child");
+                // 4修改元素
+                // 本例中：获得tbody中每一行最后一个td,累加小计，最后将总计放入tfoot中最后一个格子
+                // 4.1先获得tbody中每一行最后一个td
+                var tds=table.querySelectorAll("tbody td:last-child");
+                // 4.2遍历每个小计格中的小计，累加
+                var total=0;
+                for(var gezi of tds){
+                    total+=parseFloat(gezi.innerHTML.slice(1));
+                }
+                // 4.3将计算好的总价放入tfoot中最后一个格子里
+                lastTd.innerHTML=`￥${total.toFixed(2)}`
+            } 
+        } 
+    </script>
+</body>
+</html>

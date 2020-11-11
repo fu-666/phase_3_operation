@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Tree</title>
+</head>
+<body>
+    <span id="s1">Hello</span>
+    <h1>标题一</h1>
+    <script>
+        //log:输出DOM树结构，不输出元素对象自己的属性结构
+        console.log(document)
+        console.log(document.documentElement);
+        console.log(document.head);
+        console.log(document.body);
+        //dir:输出元素对象自己的属性结构
+        // console.dir(document);
+        // console.dir(document.documentElement);
+        // console.dir(document.head);
+        // console.dir(document.body);
+
+       //获得body下所有直接子元素的集合
+        var children=document.body.children;
+        console.log(children);
+        //获得body下第二个直接子元素h1;
+        // var h1=document.body.children[1];
+        var h1=span.nextElementSibling;
+        console.log(h1);
+        //查h1的前一个兄弟
+        var bbrother=document.body.children[1].previousSibling
+        console.log(bbrother);
+        //查h1的后一个兄弟
+        var abrother=document.body.children[1].nextElementSibling;
+        console.log(abrother);
+    </script>
+</body>
+</html>

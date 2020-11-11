@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>1. 实现伸缩二级菜单</title>
+<meta charset="utf-8" />
+<style>
+    li{
+	list-style:none;
+}
+li span{
+	padding-left: 20px;
+	cursor: pointer;
+  background: url("images/add.png") no-repeat center left;
+}
+li ul{display: none; }
+.open{ background: url("images/minus.png") no-repeat center left; }
+.open+ul{ display: block; }
+</style>
+<!-- <link rel="stylesheet" href="css/1.css" /> -->
+
+</head>
+<body>
+	<ul class="tree">
+		<li>
+			<span class="open">考勤管理</span>
+			<ul>
+				<li>日常考勤</li>
+				<li>请假申请</li>
+				<li>加班/出差</li>
+			</ul>
+		</li>
+		<li><span>信息中心</span>
+			<ul>
+				<li>通知公告</li>
+				<li>公司新闻</li>
+				<li>规章制度</li>
+			</ul>
+		</li>
+		<li><span>协同办公</span>
+			<ul>
+				<li>公文流转</li>
+				<li>文件中心</li>
+				<li>内部邮件</li>
+				<li>即时通信</li>
+				<li>短信提醒</li>
+			</ul>
+		</li>
+	</ul>
+  <script>
+    // 1查找触发事件的元素
+    //本例中：查找class为tree的ul下的所有span元素
+    var spans=document.querySelectorAll("ul.tree span");
+    // 2绑定事件处理函数
+    // 本例中：为每个span都绑定单击事件
+    for(var span of spans){
+        span.onclick=function(){
+            //this当前点击的span
+            //如果当前span的class为open
+            if(this.className=="open"){
+                //只需要关闭自己就可以了，不用管别人！因为别人肯定都是挂着的
+                this.className="";
+            }else{
+                //3查找要修改的元素
+                //本例中：要修改所有span
+                var spans=document.querySelectorAll("ul.tree span");
+                //4修改元素
+                //本例中：
+                // 4.1先清空所有span的class,让他们都暂时恢复原样
+                for(var span of spans){
+                    span.className="";
+                }
+                // 4.2再给当前点击的span,添加class open
+                this.className="open";
+            }
+        }
+    }
+    
+  </script>
+</body>
+</html>
